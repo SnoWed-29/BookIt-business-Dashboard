@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faBars, faCog, faSignOutAlt, faSearch, faPlane, faHotel, faSuitcase, faWallet, faPlusCircle, faUserFriends, faChartLine, faLifeRing, faChevronDown, faChevronUp, faChevronRight, faUser, faUtensils, faCalendarAlt, faChartBar, faCommentDots,
+  faBars, faCog, faSignOutAlt,faChevronDown, faChevronUp, faChevronRight, faUser, faUtensils, faCalendarAlt, faChartBar, faCommentDots,
   faXmark,
   faGrip
 } from '@fortawesome/free-solid-svg-icons';
