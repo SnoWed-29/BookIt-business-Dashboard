@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faUserCircle, faSearch } from '@fortawesome/free-solid-svg-icons';
 import Notifications from './Notifications';
+import { useAuthStore } from '../stores/useAuthStore';
 
 const Navbar: React.FC = () => {
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
@@ -23,7 +24,7 @@ const Navbar: React.FC = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [notificationsRef]);
-
+  const { user } = useAuthStore(); // Access the user from the auth store
   return (
     <div className="bg-[#1F2526] p-3 w-full flex h-[65px] items-center  justify-between  ">
       <div className="flex items-center justify-end w-1/2 ">
@@ -53,8 +54,8 @@ const Navbar: React.FC = () => {
         <div className="flex items-center space-x-2">
           <FontAwesomeIcon icon={faUserCircle} className="text-white text-xl" />
           <div className="text-right">
-            <span className="block text-white font-semibold text-sm">Solim</span>
-            <span className="block text-green-500 text-xs">SM</span>
+            <span className="block text-white font-semibold text-sm">{user?.name}</span>
+            <span className="block text-green-500 text-xs">{user?.role}</span>
           </div>
         </div>
       </div>

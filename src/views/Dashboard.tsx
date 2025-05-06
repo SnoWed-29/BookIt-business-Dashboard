@@ -3,6 +3,7 @@ import KpiSection from "../components/KpiSection";
 import SortableReservationsTable from "../components/SortableReservationsTable";
 
 const Dashboard: React.FC = () => {
+    console.log(import.meta.env.VITE_BACKEND_URL)
     return (
         <div className="flex w-full flex-col space-y-6 p-6"> {/* Added padding for better spacing */}
             <KpiSection />

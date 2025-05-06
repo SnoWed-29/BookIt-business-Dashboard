@@ -168,6 +168,12 @@ const Sidebar: React.FC = () => {
     },
   ];
 
+  const handleLogout = () => {
+    // Clear any auth-related data
+    localStorage.removeItem('token'); // or your actual key
+    // Redirect to login page
+    window.location.href = '/login'; // or use navigate from react-router
+  };
   return (
     <motion.div
       initial={{ width: isCollapsed ? 64 : 260 }}
@@ -233,7 +239,7 @@ const Sidebar: React.FC = () => {
             currentPath={currentPath}
             isCollapsed={isCollapsed}
           />
-          <Link to="/logout" className="block w-full">
+          <button onClick={handleLogout} className="block w-full">
             <motion.li
               whileHover={{ backgroundColor: '#E6E6E6', color: '#e53e3e' }}
               transition={{ duration: 0.2 }}
@@ -245,7 +251,7 @@ const Sidebar: React.FC = () => {
               <FontAwesomeIcon icon={faSignOutAlt} className="w-5 h-5 text-red-500 mr-3" />
               {!isCollapsed && <span>Log Out</span>}
             </motion.li>
-          </Link>
+          </button>
         </ul>
       </div>
     </motion.div>
